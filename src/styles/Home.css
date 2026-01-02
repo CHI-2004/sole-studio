@@ -1,0 +1,511 @@
+/* =========================
+   HERO SECTION (DESKTOP)
+========================= */
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&q=80&w=1600');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   BRANDS (EDGE-TO-EDGE)
+========================= */
+.brands {
+  margin-top: 5rem;
+  background: #3f9e05;
+  padding: 2rem 0;
+  z-index: 1;
+}
+
+.brand-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-logos span {
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-weight: 900;
+  color: #e0e0e0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.brand-logos span:hover {
+  color: #333;
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+/* =========================
+   CLEAN MARKETPLACE GRID
+========================= */
+.marketplace-grid {
+  display: grid;
+  /* Auto-responsive grid: 2 columns on mobile, up to 4+ on desktop */
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+  padding: 1.5rem 0;
+}
+
+.product-card.temu-style {
+  background: #fff;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card.temu-style:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* --- Image Wrapper --- */
+/* Forces all image containers to be exactly the same size */
+.temu-style .img-wrapper, 
+.product-card.jumia-style .img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px; /* Forces all cards to have the same image height */
+  background: #f8f8f8;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Forces images to fill the container without distorting */
+.temu-style .img-wrapper img, 
+.product-card.jumia-style .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  /* Use 'cover' to fill the area or 'contain' for white space but uniform card size */
+  object-fit: cover; 
+  display: block;
+}
+
+/* --- Badge & Button Styles --- */
+.discount-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff0e5;
+  color: #ff6b00;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.add-to-cart-mini {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #eee;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+
+.add-to-cart-mini:hover {
+  background: #f0f0f0;
+}
+
+/* --- Text & Alignment --- */
+.product-details {
+  padding: 4px 8px 12px 8px;
+  text-align: left;
+}
+
+.product-details .brand-name {
+  font-size: 0.7rem;
+  color: #999;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* --- Text & Alignment --- */
+.product-details .product-title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+  /* REDUCE THIS MARGIN */
+  margin: 2px 0; 
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* REMOVE OR REDUCE MIN-HEIGHT */
+  min-height: auto; 
+}
+
+.price-row {
+  display: flex;
+  flex-direction: column;
+  /* SET TO 0 OR A SMALL NEGATIVE PIXEL IF NEEDED */
+  margin-top: 0px; 
+}
+
+.current-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.old-price {
+  font-size: 0.8rem;
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+/* =========================
+   PROMO BANNER
+========================= */
+.promo-banner {
+  margin: 4rem 0;
+  padding: clamp(2rem, 6vw, 4rem) 1rem;
+  background: linear-gradient(45deg, #111 25%, #1a1a1a 25%, #1a1a1a 50%, #111 50%);
+  background-size: 50px 50px;
+  color: #fff;
+  text-align: center;
+  border-top: 4px solid #ff4d4d;
+  border-bottom: 4px solid #ff4d4d;
+}
+
+.promo-banner h2 {
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.promo-banner strong {
+  color: #ff4d4d;
+  padding: 2px 8px;
+  border: 1px dashed #ff4d4d;
+  background: rgba(255,77,77,0.12);
+  font-family: monospace;
+  cursor: pointer;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+.countdown-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.timer-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.timer-block {
+  min-width: 72px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,77,77,0.3);
+  text-align: center;
+}
+
+.timer-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ff4d4d;
+}
+
+/* =========================
+   TRUST BADGES (Updated)
+========================= */
+.trust-badges {
+  display: flex;
+  justify-content: space-around; /* Spreads them evenly */
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+  border-radius: 14px;
+  margin-top: 2rem;
+}
+
+.badge-item {
+  text-align: center;
+  flex: 1; /* Makes each item take equal space */
+  padding: 0.5rem;
+}
+
+.badge-icon {
+  font-size: 2.5rem; /* Reduced icon size */
+  margin-bottom: 5px;
+}
+
+.badge-item h4 {
+  font-size: 0.90rem; /* Smaller heading */
+  margin-bottom: 4px;
+  white-space: nowrap; /* Prevents title from breaking into two lines */
+}
+
+.badge-item p {
+  font-size: 0.9rem; /* Smaller description */
+  color: #666;
+  line-height: 1.2;
+}
+
+/* --- MOBILE RESPONSIVE (Straight Line) --- */
+@media (max-width: 600px) {
+  .trust-badges {
+    gap: 5px; /* Tighten gap for small screens */
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .badge-item h4 {
+    font-size: 0.75rem; /* Even smaller for mobile */
+  }
+
+  .badge-item p {
+    display: none; /* Optional: Hide sub-text on very small screens to keep it clean */
+  }
+}
+
+/* =========================
+   UPDATED RESPONSIVE QUERIES
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    text-align: center;
+  }
+  .marketplace-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands {
+    padding: 2rem 1rem;
+  }
+  .marketplace-grid {
+    /* Guarantees exactly 2 items per row on mobile for a neat shop look */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .current-price {
+    font-size: 1rem;
+  }
+}
+/* --- ENABLES HORIZONTAL SCROLL --- */
+.horizontal-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  scrollbar-width: none; /* Hides scrollbar on Firefox */
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Hides scrollbar on Chrome/Safari */
+}
+
+.marketplace-grid.horizontal {
+  display: flex; /* Forces items into one straight line */
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.product-card.jumia-style {
+  flex: 0 0 180px; /* Prevents cards from shrinking in the scroll */
+  background: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  position: relative;
+}
+
+/* --- UNIQUE BADGE STYLE --- */
+.discount-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #FEF3E9;
+  color: #F68B1E;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+/* --- STOCK PROGRESS BAR STYLES --- */
+.flash-sale-stock { 
+  margin-top: 7px; 
+  /* Added a max-width to ensure it stays away from the cart button */
+  max-width: 70%; 
+}
+
+.items-left-text { 
+  font-size: 11px; 
+  font-weight: 600; 
+  color: #313133; 
+  margin-bottom: 4px; 
+}
+
+.progress-bar-bg { 
+  /* Reduced width further to create a safe "buffer" zone */
+  width: 100%; 
+  height: 6px; 
+  background: #EDEDED; 
+  border-radius: 10px; 
+}
+
+.progress-fill { 
+  height: 100%; 
+  /* This width should remain dynamic based on your product data */
+  background: #F68B1E; 
+  border-radius: 10px; 
+}
+/* --- MOBILE RESPONSIVE SCROLL --- */
+@media (max-width: 480px) {
+  .product-card.jumia-style {
+    flex: 0 0 155px; /* Shows partial cards on mobile to hint at scroll */
+  }
+}
+
+/* --- Updated Promo Tiles Styling --- */
+.promo-tiles {
+  margin: 3rem auto;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.promo-card {
+  position: relative; /* Essential for the image positioning */
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Clips the image if it goes outside the card */
+}
+
+.promo-text {
+  position: relative;
+  z-index: 2; /* Keeps text on top of the image */
+  width: 60%; /* Keeps text on the left half */
+}
+
+/* This makes the image big and pushes it to the right */
+.promo-image {
+  position: absolute;
+  right: -20px; /* Moves it slightly off-edge for a cool look */
+  bottom: -10px;
+  width: 70%; /* Increased size to cover more area */
+  height: 120%; /* Makes it taller than the card to ensure coverage */
+  object-fit: contain; /* Keeps the shoe from looking squashed */
+  z-index: 1;
+  transition: transform 0.4s ease;
+  pointer-events: none; /* Allows clicks to pass through to the "Shop Now" link */
+}
+
+.promo-card:hover .promo-image {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Background Colors */
+.promo-card.blue { background: #0071dc; }
+.promo-card.orange { background: #e35d48; }
+.promo-card.green { background: #97cc39; }
+
+/* Text Styles */
+.promo-text h3 { font-size: 1.4rem; margin-bottom: 10px; line-height: 1.2; font-weight: 800; }
+.promo-text p { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; }
+.promo-link { color: white; text-decoration: underline; font-size: 0.85rem; font-weight: 600; }
+
+/* Responsive Fix for Mobile */
+@media (max-width: 992px) {
+  .promo-grid { grid-template-columns: 1fr; }
+  .promo-card { min-height: 180px; }
+  .promo-image { width: 50%; height: 110%; }
+}
+
+/* --- Category Styling --- */
+.categories-section { margin: 4rem auto; }
+
+.categories-scroll {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scrollbar-width: none;
+}
+
+.categories-scroll::-webkit-scrollbar { display: none; }
+
+.category-item { text-align: center; flex: 0 0 auto; }
+
+.category-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  margin: 0 auto 12px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.category-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.category-item p { font-size: 0.95rem; font-weight: 600; color: #333; }
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 600px) {
+  .category-circle { width: 90px; height: 90px; }
+}

@@ -1,0 +1,285 @@
+/* =========================
+   HERO SLIDER
+========================= */
+.hero-slider {
+ position: relative;
+  min-height: 85vh; /* Change height to min-height */
+  width: 100%;
+  overflow: visible; /* Change from hidden to visible so buttons aren't cut */
+  padding-bottom: 80px; /* Create a dedicated "safe zone" for the arrows at the bottom */
+  transition: background-color 0.6s ease;
+  display: flex;
+  align-items: center;
+}
+
+.slide-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.text-area {
+  z-index: 10;
+}
+
+.slide-brand-title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+.slider-controls {
+  position: absolute;
+  bottom: 2rem;
+  left: auto; /* Remove centering */
+  right: 10%;   /* Move to the right side */
+  transform: none; /* Remove centering transform */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 30;
+}
+.slide-tagline {
+  font-size: clamp(0.9rem, 1.8vw, 1.25rem);
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* HERO ACTION GROUP */
+.hero-action-group {
+  margin-top: 2rem;
+  padding-bottom: 0; /* Removed the negative value */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.shop-btn {
+  /* This variable now updates per slide */
+  background-color: var(--accent) !important; 
+  border: 1px solid var(--accent) !important;
+  color: white;
+  padding: 0.9rem 2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.shop-btn:hover {
+  /* This makes the background color roughly 20% lighter */
+  filter: brightness(1.2); 
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.view-btn {
+  font-weight: 600;
+  /* Matches the button color */
+  color: var(--accent) !important; 
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+ filter: brightness(1.2);
+  border-bottom-color: var(--accent);
+}
+
+/* IMAGE AREA */
+.image-area {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+}
+
+.image-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.15));
+  z-index: 2;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.image-shadow {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+/* SLIDER CONTROLS */
+.slider-controls {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 30;
+}
+
+.control-btn {
+  background: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+}
+
+.indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  width: 20px;
+  border-radius: 10px;
+  background: var(--primary);
+}
+
+/* SCROLL TO TOP */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 45px;
+  height: 45px;
+  background: #3f9e05;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  z-index: 2000;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .slide-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 3rem;
+    gap: 1.5rem;
+  }
+
+  .text-area { order: 2; }
+  .image-area { order: 1; height: 350px; }
+  .image-area img {
+  width: 90%; /* Reduced from 100% */
+  height: auto;
+  max-height: 400px; /* Limits how much vertical space the shoe takes */
+  object-fit: contain;
+  padding: 10px;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.15));
+  z-index: 2;
+  transform: scale(1); /* Reduced from 1.1 */
+  transition: transform 0.3s ease;
+}
+  .slide-brand-title { font-size: 2.5rem; }
+  .slide-tagline { font-size: 1rem; max-width: 90%; margin: 0 auto; }
+.hero-slider {
+    min-height: 100vh; /* Give the slider full screen height to fit everything */
+    padding-bottom: 120px; /* Space for controls at the very bottom */
+  }
+
+  .slider-controls {
+    bottom: 1.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%); /* Re-center only for mobile */
+  }
+
+  .hero-buttons {
+    /* Reduce the margin-bottom you added earlier to stop the push */
+    margin-bottom: 20px; 
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .shop-btn {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 30px;
+   
+  }
+  .view-btn{
+    margin-bottom: 30px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .slide-content { gap: 1rem; padding-top: 2rem; }
+  .image-area { height: 250px; }
+  .slide-brand-title { font-size: 1.8rem; }
+  .slide-tagline { font-size: 0.9rem; }
+  .hero-action-group {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+ .hero-buttons {
+    flex-direction: column; /* Stacks nicely on mobile */
+    align-items: center;
+    width: 100%;
+    gap: 0.8rem;
+  }
+  .scroll-top-btn { width: 40px; height: 40px; font-size: 1.1rem; bottom: 1rem; right: 1rem; }
+  .image-area img { transform: scale(1); }
+}

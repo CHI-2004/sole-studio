@@ -1,0 +1,153 @@
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Header Interactions */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cart-icon {
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  outline: none;
+}
+
+.cartIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  overflow: visible !important; /* This prevents the cropping */
+}
+
+.badge {
+  position: absolute;
+  top: -5px; /* Moves badge above the icon */
+  right: -5px; /* Moves badge to the side */
+  background-color: #ff4d4d;
+  color: white;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  font-weight: bold;
+}
+
+/* Header Responsiveness */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1rem;
+  }
+  .search-bar input {
+    width: 120px;
+    font-size: 0.8rem;
+  }
+}
+/* Modern Shop Button Styling */
+.shop-btn-modern {
+  background-color: #ff4d00;
+  color: white !important; /* Ensures text is white */
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(255, 77, 0, 0.2);
+}
+
+.shop-btn-modern:hover {
+  background-color: #e64500; /* Slightly darker on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 77, 0, 0.3);
+}
+
+/* Ensure it stays visible and looks good on mobile */
+@media (max-width: 768px) {
+  .shop-btn-modern {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .nav-actions {
+    gap: 0.8rem; /* Tighten space on mobile to fit all icons */
+  }
+}

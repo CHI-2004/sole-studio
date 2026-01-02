@@ -1,0 +1,76 @@
+/* Base Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Global Transition Defaults */
+button, a, .product-card, img {
+  transition: all 0.25s ease-in-out;
+}
+
+/* Button Press Effect */
+button:active {
+  transform: scale(0.96);
+}
+
+
+:root {
+  --primary: #111111;
+  --secondary: #757575;
+  --accent: #ff4d00;
+  --bg: #ffffff;
+  --light-bg: #f5f5f5;
+  --border: #e5e5e5;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary:hover { background: #333; }
+
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+}

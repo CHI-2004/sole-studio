@@ -1,0 +1,112 @@
+.footer {
+  position: relative;
+  /* Darker gradient overlay to make white text pop */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), 
+              url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-color: #111; /* Fallback for when image fails */
+  color: white;
+  padding: 5rem 0 2rem;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+/* Use a specific class for footer container to avoid global style conflicts */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr; /* Give more room to newsletter */
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-col h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ff4d00; /* Jumia Orange or your Brand Green #3f9e05 */
+  text-transform: uppercase;
+}
+
+.footer-col p {
+  color: #adadad; /* Brighter grey for readability */
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-col ul li:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+/* Newsletter Fix */
+.newsletter {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px;
+  border-radius: 4px; /* Squares look more professional for e-commerce */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletter input {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  color: white;
+  flex: 1;
+  outline: none;
+}
+
+.newsletter button {
+  background: #ff4d00;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures vertical alignment */
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.footer-legal {
+  display: flex;
+  /* This shifts the links away from the right side */
+  padding-right: 4rem; 
+}
+
+/* Optional: styling for the individual links within legal */
+.footer-legal span {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-legal span:hover {
+  color: #fff;
+}

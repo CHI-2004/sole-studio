@@ -1,0 +1,125 @@
+/* Unique Wrapper to prevent background bleeding */
+.pd-page-wrapper {
+  background-color: #f1f1f1;
+  padding: 30px 10px;
+  min-height: 100vh;
+}
+
+/* Base Card Style (Jumia Look) */
+.pd-main-card {
+  max-width: 1150px;
+  margin: 0 auto 20px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pd-layout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+}
+
+/* Gallery Styles */
+.pd-hero-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+}
+
+.pd-thumb-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.pd-thumb-item, .pd-thumb-active {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  object-fit: cover;
+}
+
+.pd-thumb-active { border: 2px solid #f68b1e; }
+
+/* Product Info Styles */
+.pd-breadcrumb-path { font-size: 13px; color: #757575; margin-bottom: 10px; }
+.pd-brand-label { color: #3f9e05; font-weight: bold; text-transform: uppercase; margin: 0; }
+.pd-product-title { font-size: 24px; margin: 5px 0; color: #282828; }
+
+.pd-current-price { font-size: 32px; font-weight: 800; color: #f68b1e; }
+.pd-strike-price { text-decoration: line-through; color: #a5a5a5; margin-left: 12px; font-size: 18px; }
+
+/* Size Buttons */
+.pd-size-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pd-btn-size {
+  padding: 12px;
+  background: white;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.pd-btn-size.active {
+  background: #f68b1e;
+  color: white;
+  border-color: #f68b1e;
+}
+
+.pd-add-to-cart-action {
+  width: 100%;
+  padding: 18px;
+  background: #f68b1e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(246, 139, 30, 0.3);
+}
+
+.pd-add-to-cart-action:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; }
+
+/* Specs Section */
+.pd-specs-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.pd-data-table { width: 100%; border-collapse: collapse; }
+.pd-data-table td { padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+.pd-data-table td:first-child { font-weight: bold; color: #757575; width: 40%; }
+
+/* Related Products */
+.pd-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.pd-suggested-card { text-decoration: none; color: inherit; }
+.pd-suggested-img { width: 100%; height: 180px; object-fit: cover; border-radius: 4px; }
+.pd-item-name { font-size: 14px; margin: 8px 0 2px; }
+.pd-item-price { font-weight: bold; color: #333; }
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .pd-layout-grid, .pd-specs-wrapper, .pd-related-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
