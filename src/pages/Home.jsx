@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { products } from '../data/heroSliderData';
+import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
 import HeroSlider from '../components/HeroSlider';
 import '../styles/Home.css';
