@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom'; 
-import { products } from '../data/products';
+import { products } from '../data/heroSliderData';
 import '../styles/Shop.css';
 
 const Shop = () => {

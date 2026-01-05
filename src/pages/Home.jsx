@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { products } from '../data/products';
+import { products } from '../data/heroSliderData';
 import { useCart } from '../context/CartContext';
 import HeroSlider from '../components/HeroSlider';
 import '../styles/Home.css';
@@ -12,7 +12,7 @@ import double from '../assets/double.png';
 import h1 from '../assets/h1.jpg';
 import menshoes from '../assets/menshoes.png';
 import office1 from '../assets/office1.jpg';
-import nike9 from '../assets/Nike9.jpg';
+import nike9 from '../assets/nike9.jpg';
 import shoe1 from '../assets/shoe1.jpg';
 import off1 from '../assets/off1.jpg';
 import jordan1 from '../assets/Jordan1.jpg';

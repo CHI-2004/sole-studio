@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { heroSlides } from '../data/heroSliderData';
 import { Link } from 'react-router-dom';
-import { products } from '../data/products'; 
+import { products } from '../data/heroSliderData';
 import '../styles/HeroSlider.css';
 
 const HeroSlider = ({ addToCart }) => {
